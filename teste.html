@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raízes e Conexões</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>🌾 Raízes e Conexões</h1>
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+    <nav id="menu">
+      <ul>
+        <li><a href="#inicio">🏠 Início</a></li>
+        <li><a href="#mapa">🗺️ Mapa do Brasil</a></li>
+        <li><a href="#historias">👩‍🌾 Histórias de Gente</a></li>
+        <li><a href="#receitas">🍲 Receitas</a></li>
+        <li><a href="#eventos">🎉 Eventos</a></li>
+        <li><a href="#educativa">📚 Área Educativa</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <h2>Bem-vindo ao projeto!</h2>
+      <p>Explore as conexões entre o campo e a cidade através de histórias, receitas e tradições, com visual criado por
+        Inteligência Artificial.</p>
+    </section>
+
+    <section id="mapa">
+      <h2>Mapa do Brasil</h2>
+      <p>Veja os produtos típicos de cada região rural e seu impacto na vida urbana.</p>
+      <img src="mapa_exemplo.png" alt="Mapa dos Produtos do Campo" />
+    </section>
+
+    <section id="historias">
+      <h2>Histórias de Gente</h2>
+      <p>Depoimentos de produtores rurais como criadores de carneiro, produtores de morango e tomate. Conectando
+        realidades do campo com a cidade.</p>
+      <a href="historia.html" class="btn-saiba-mais">Saiba Mais</a>
+    </section>
+
+
+    <section id="receitas">
+      <h2>Receitas do Campo</h2>
+      <p>Conheça receitas tradicionais de origem rural que fazem parte da vida urbana.</p>
+    </section>
+
+    <section id="eventos">
+      <h2>Eventos e Feiras</h2>
+      <p>Calendário com festas típicas, encontros e feiras nas regiões próximas a Curitiba.</p>
+    </section>
+
+    <section id="educativa">
+      <h2>Área Educativa</h2>
+      <p>Infográficos sobre sustentabilidade e agricultura familiar, além de quizzes interativos para todos os públicos!
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>🌿 Projeto desenvolvido com HTML + CSS | Hospedado no GitHub Pages</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+    }
+
+    // Animação bounce ao clicar nos links do menu
+    document.querySelectorAll('nav ul li a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').replace('#', '');
+        const target = document.getElementById(targetId);
+
+        if (target) {
+          target.classList.remove('bounce');
+          void target.offsetWidth; // força reflow
+          target.classList.add('bounce');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

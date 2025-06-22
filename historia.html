@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Histórias de Gente – Raízes e Conexões</title>
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+  <header>
+    <h1>🌾 Raízes e Conexões</h1>
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+    <nav id="menu">
+      <ul>
+        <li><a href="index.html">🏠 Página Inicial</a></li>
+        <li><a href="#historias">👩‍🌾 Histórias</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="historias">
+      <h2>Histórias de Gente</h2>
+      <p>Depoimentos de produtores rurais como criadores de carneiro, produtores de morango e tomate. Conectando realidades do campo com a cidade.</p>
+
+      <div class="depoimento">
+        <h3>🐑 João, criador de carneiros</h3>
+        <p>"Comecei com apenas dois carneiros e hoje minha produção abastece restaurantes em Curitiba. A cidade e o campo caminham juntos."</p>
+      </div>
+
+      <div class="depoimento">
+        <h3>🍓 Maria, produtora de morangos</h3>
+        <p>"Meus morangos são vendidos em feiras urbanas e também em mercados locais. Ver a alegria das crianças experimentando é gratificante!"</p>
+      </div>
+
+      <div class="depoimento">
+        <h3>🍅 Paulo, produtor de tomates</h3>
+        <p>"O tomate que você usa na pizza provavelmente vem de uma propriedade como a minha. Cada colheita é feita com muito cuidado."</p>
+      </div>
+
+      <a href="teste.html" class="voltar">← Voltar à Página Inicial</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>🌿 Projeto desenvolvido com HTML + CSS | Hospedado no GitHub Pages</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+    }
+
+    document.querySelectorAll('nav ul li a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').replace('#', '');
+        const target = document.getElementById(targetId);
+
+        if (target) {
+          target.classList.remove('bounce');
+          void target.offsetWidth;
+          target.classList.add('bounce');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
